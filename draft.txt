@@ -1,0 +1,23 @@
+type        ::post
+title       ::Dummy Title
+category    ::Category Name
+tags        ::lorem, ipsum, dolor sit, amet
+description ::Some dummy description text
+
+
+First paragraph
+
+Second paragraph with image
+==img url
+Second paragraph continues and ends
+
+Third paragraph
+
+
+LORORLROLROR
+
+
+LEYLEYLEY
+
+
+LERELRLERLELRLE
