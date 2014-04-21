@@ -1,5 +1,6 @@
 FileSystem  = require "fs"
 Mkdirp      = require "mkdirp"
+Markdown    = require "markdown"
 Utils       = require "./utils/utils.js"
 
 class Page
@@ -7,7 +8,7 @@ class Page
   constructor: (options) ->
     @pageData =
       meta: options.meta
-      content: @parseContent options.content
+      content: Markdown.parse options.content
 
     switch @pageData.meta.type
       when "post"
@@ -33,10 +34,10 @@ class Page
       else
         console.log "fuck lan"
 
-  parseContent: (content) ->
-    return "\n#{content.split("\r\n\r\n").map (e) ->
-      return "\t\t<p>#{e.replace(/\r\n/g, "<br />\n\t\t")}</p>"
-    .join("\n")}\n"
+#  parseContent: (content) ->
+#    return "\n#{content.split("\r\n\r\n").map (e) ->
+#      return "\t\t<p>#{e.replace(/\r\n/g, "<br />\n\t\t")}</p>"
+#    .join("\n")}\n"
 
 
 fileReady = (error, data) ->
