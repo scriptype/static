@@ -21,7 +21,7 @@ Page = (function() {
           JS: "../res/js",
           IMG: "../res/img"
         };
-        categoryPath = "httpdocs/" + (Utils.delocalizeString(this.pageData.meta["category"]));
+        categoryPath = "public/" + (Utils.delocalizeString(this.pageData.meta["category"]));
         fileName = Utils.delocalizeString(this.pageData.meta.title);
         fileData = Utils.prepareTemplate("post", this.pageData);
         Mkdirp(categoryPath, function(error) {
@@ -48,7 +48,9 @@ Page = (function() {
   }
 
   Page.prototype.parseContent = function(content) {
-    return "<p>" + (content.replace(/\r\n\r\n/g, "</p><p>").replace(/\r\n/g, "<br />").replace(/<p>/g, "\n<p>"));
+    return content.split("\r\n\r\n").map(function(e) {
+      return "<p>" + (e.replace(/\r\n/g, "<br />\n")) + "</p>";
+    }).join("\n");
   };
 
   return Page;

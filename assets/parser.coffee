@@ -15,7 +15,7 @@ class Page
           CSS : "../res/css"
           JS  : "../res/js"
           IMG : "../res/img"
-        categoryPath  = "httpdocs/#{Utils.delocalizeString(@pageData.meta["category"])}"
+        categoryPath  = "public/#{Utils.delocalizeString(@pageData.meta["category"])}"
         fileName      = Utils.delocalizeString(@pageData.meta.title)
         fileData      = Utils.prepareTemplate "post", @pageData
         Mkdirp categoryPath, (error) ->
@@ -34,12 +34,9 @@ class Page
         console.log "fuck lan"
 
   parseContent: (content) ->
-    return "<p>#{
-    content
-      .replace(/\r\n\r\n/g, "</p><p>")
-      .replace(/\r\n/g, "<br />")
-      .replace(/<p>/g, "\n<p>")
-    }"
+    return content.split("\r\n\r\n").map( (e) ->
+      return "<p>#{e.replace(/\r\n/g, "<br />\n")}</p>"
+    ).join("\n")
 
 
 fileReady = (error, data) ->
