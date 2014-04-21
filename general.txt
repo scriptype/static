@@ -1,0 +1,5 @@
+site-name       ::Enes'in Blogu
+base-uri        ::http://enes.in
+resources-uri   ::res
+favicon         ::f.png
+sitemap         ::sitemap.xml

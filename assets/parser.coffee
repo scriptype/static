@@ -34,9 +34,9 @@ class Page
         console.log "fuck lan"
 
   parseContent: (content) ->
-    return content.split("\r\n\r\n").map( (e) ->
-      return "<p>#{e.replace(/\r\n/g, "<br />\n")}</p>"
-    ).join("\n")
+    return "\n#{content.split("\r\n\r\n").map (e) ->
+      return "\t\t<p>#{e.replace(/\r\n/g, "<br />\n\t\t")}</p>"
+    .join("\n")}\n"
 
 
 fileReady = (error, data) ->
@@ -57,4 +57,4 @@ fileReady = (error, data) ->
     content: content
 
 
-FileSystem.readFile "draft.txt", "utf-8", fileReady
+FileSystem.readFile "draft/Hello World.txt", "utf-8", fileReady

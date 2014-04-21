@@ -1,6 +1,7 @@
 type        ::post
-title       ::Dummy Title
-category    ::Category Name
+published   ::true
+title       ::Hello World
+category    ::Web Development
 tags        ::lorem, ipsum, dolor sit, amet
 description ::Some dummy description text
 
@@ -18,6 +19,34 @@ LORORLROLROR
 
 
 LEYLEYLEY
+
+
+
+LERELRLERLELRLE
+
+
+
+
+
+
+LORORLROLROR
+
+
+
+
+
+LEYLEYLEY
+
+
+
+
+
+
+
+
+
+
+
 
 
 LERELRLERLELRLE

@@ -48,9 +48,9 @@ Page = (function() {
   }
 
   Page.prototype.parseContent = function(content) {
-    return content.split("\r\n\r\n").map(function(e) {
-      return "<p>" + (e.replace(/\r\n/g, "<br />\n")) + "</p>";
-    }).join("\n");
+    return "\n" + (content.split("\r\n\r\n").map(function(e) {
+      return "\t\t<p>" + (e.replace(/\r\n/g, "<br />\n\t\t")) + "</p>";
+    }).join("\n")) + "\n";
   };
 
   return Page;
@@ -79,7 +79,7 @@ fileReady = function(error, data) {
   });
 };
 
-FileSystem.readFile("draft.txt", "utf-8", fileReady);
+FileSystem.readFile("draft/Hello World.txt", "utf-8", fileReady);
 
 /*
 //@ sourceMappingURL=parser.map
