@@ -2,3 +2,5 @@
 .idea/*
 assets/*.map
 assets/*.js
+assets/utils/*.map
+assets/utils/*.js
