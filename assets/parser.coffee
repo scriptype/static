@@ -57,7 +57,17 @@ fileReady = (error, data) ->
     content: content
 
 
-unless process.argv[2]
-  console.log "You need to specify a path or filename, sucker."
+pathArg = process.argv[2]
+unless pathArg
+  return console.log "You need to specify a path or filename, sucker."
 
-FileSystem.readFile "draft/Hello World.txt", "utf-8", fileReady
+draftsFolder = "drafts"
+
+if pathArg is "-a" or pathArg is "-all"
+  fileList = FileSystem.readdirSync draftsFolder, (err, dd) ->
+    throw err if err
+    return dd
+  for key in fileList
+    FileSystem.readFile "#{draftsFolder}/#{key}", "utf-8", fileReady
+else
+  FileSystem.readFile "#{draftsFolder}/#{pathArg}", "utf-8", fileReady
