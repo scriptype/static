@@ -57,4 +57,7 @@ fileReady = (error, data) ->
     content: content
 
 
+unless process.argv[2]
+  console.log "You need to specify a path or filename, sucker."
+
 FileSystem.readFile "draft/Hello World.txt", "utf-8", fileReady
