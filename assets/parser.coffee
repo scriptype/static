@@ -64,9 +64,7 @@ unless pathArg
 draftsFolder = "drafts"
 
 if pathArg is "-a" or pathArg is "-all"
-  fileList = FileSystem.readdirSync draftsFolder, (err, dd) ->
-    throw err if err
-    return dd
+  fileList = FileSystem.readdirSync draftsFolder
   for key in fileList
     FileSystem.readFile "#{draftsFolder}/#{key}", "utf-8", fileReady
 else

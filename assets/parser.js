@@ -88,12 +88,7 @@ if (!pathArg) {
 draftsFolder = "drafts";
 
 if (pathArg === "-a" || pathArg === "-all") {
-  fileList = FileSystem.readdirSync(draftsFolder, function(err, dd) {
-    if (err) {
-      throw err;
-    }
-    return dd;
-  });
+  fileList = FileSystem.readdirSync(draftsFolder);
   for (_i = 0, _len = fileList.length; _i < _len; _i++) {
     key = fileList[_i];
     FileSystem.readFile("" + draftsFolder + "/" + key, "utf-8", fileReady);
