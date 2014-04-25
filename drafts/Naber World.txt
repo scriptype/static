@@ -1,0 +1,52 @@
+type        ::post
+published   ::true
+title       ::Naber World
+category    ::Visial Communication Design
+tags        ::lorem, ipsum, dolor sit, amet
+description ::Some dummy description text
+
+
+First paragraph
+
+Second paragraph
+
+![Alt text](../res/img/3.jpeg)
+
+Third paragraph
+
+
+LORORLROLROR
+
+
+LEYLEYLEY
+
+
+
+LERELRLERLELRLE
+
+
+
+
+
+
+LORORLROLROR
+
+
+
+
+
+LEYLEYLEY
+
+
+
+
+
+
+
+
+
+
+
+
+
+LERELRLERLELRLE
